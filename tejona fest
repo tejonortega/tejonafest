@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación Tejona Fest</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0f172a;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 16px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .content {
+      padding: 24px;
+    }
+    h1 {
+      margin: 0;
+      color: #ea580c;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .location {
+      margin: 8px 0 4px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1e293b;
+    }
+    .date {
+      margin: 0 0 18px;
+      font-size: 1rem;
+      color: #64748b;
+    }
+    .countdown-box {
+      background: #fff7ed;
+      border: 2px dashed #f97316;
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .countdown-box span {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #c2410c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="image-container">
+      <!-- Coloca tu foto con el nombre 'foto.jpg' en la misma carpeta -->
+      <img src="foto.jpg" alt="Tejona Fest Bacalar">
+    </div>
+    <div class="content">
+      <h1>Tejona Fest</h1>
+      <div class="location">Muelle municipal</div>
+      <div class="date">23 de enero de 2027</div>
+
+      <div class="countdown-box">
+        <span id="countdown">Calculando...</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const targetDate = new Date('2027-01-23T00:00:00');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diffTime = targetDate - now;
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+      const display = document.getElementById('countdown');
+      if (diffDays > 1) {
+        display.textContent = `Faltan ${diffDays} días`;
+      } else if (diffDays === 1) {
+        display.textContent = '¡Falta 1 día!';
+      } else if (diffDays === 0) {
+        display.textContent = '¡Es hoy!';
+      } else {
+        display.textContent = '¡El evento ya se llevó a cabo!';
+      }
+    }
+
+    updateCountdown();
+  </script>
+</body>
+</html>
