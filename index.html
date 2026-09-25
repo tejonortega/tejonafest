@@ -11,17 +11,17 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #0f172a;
+      background: linear-gradient(135deg, #0d9488 0%, #06b6d4 50%, #38bdf8 100%);
       font-family: system-ui, -apple-system, sans-serif;
       padding: 16px;
     }
     .card {
       background: #ffffff;
-      border-radius: 20px;
+      border-radius: 24px;
       overflow: hidden;
       max-width: 420px;
       width: 100%;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      box-shadow: 0 16px 32px rgba(13, 148, 136, 0.35);
       text-align: center;
     }
     .image-container img {
@@ -31,36 +31,60 @@
       object-fit: cover;
     }
     .content {
-      padding: 24px;
+      padding: 24px 20px;
+    }
+    .badge {
+      display: inline-block;
+      background: #ccfbf1;
+      color: #0f766e;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
     }
     h1 {
-      margin: 0;
-      color: #ea580c;
-      font-size: 2rem;
-      letter-spacing: 1px;
+      margin: 4px 0 10px;
+      color: #0d9488;
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
     }
     .location {
-      margin: 8px 0 4px;
-      font-size: 1.2rem;
-      font-weight: 600;
+      margin: 0 0 6px;
+      font-size: 1.25rem;
+      font-weight: 700;
       color: #1e293b;
     }
     .date {
-      margin: 0 0 18px;
+      margin: 0 0 14px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #0284c7;
+    }
+    .note {
+      margin: 0 0 20px;
       font-size: 1rem;
-      color: #64748b;
+      font-weight: 500;
+      color: #0f766e;
+      background: #f0fdfa;
+      padding: 8px 12px;
+      border-radius: 10px;
+      display: inline-block;
     }
     .countdown-box {
-      background: #fff7ed;
-      border: 2px dashed #f97316;
-      border-radius: 12px;
-      padding: 12px;
+      background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
+      border: 2px dashed #06b6d4;
+      border-radius: 16px;
+      padding: 14px;
     }
     .countdown-box span {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #c2410c;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f766e;
     }
   </style>
 </head>
@@ -68,13 +92,14 @@
 
   <div class="card">
     <div class="image-container">
-      <!-- Coloca tu foto con el nombre 'foto.jpg' en la misma carpeta -->
       <img src="foto.jpg" alt="Tejona Fest Bacalar">
     </div>
     <div class="content">
+      <div class="badge">Estás invitado al</div>
       <h1>Tejona Fest</h1>
-      <div class="location">Muelle municipal</div>
-      <div class="date">23 de enero de 2027</div>
+      <div class="location">📍 Muelle municipal</div>
+      <div class="date">📅 23 / 01 / 27</div>
+      <div class="note">🧺 Trae algo para compartir</div>
 
       <div class="countdown-box">
         <span id="countdown">Calculando...</span>
