@@ -5,91 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invitación Tejona Fest</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #0d9488 0%, #06b6d4 50%, #38bdf8 100%);
+      /* Imagen de fondo a pantalla completa */
+      background: linear-gradient(rgba(10, 37, 48, 0.45), rgba(10, 37, 48, 0.7)),
+                  url('foto.jpg.jpg') no-repeat center center fixed;
+      background-size: cover;
       font-family: system-ui, -apple-system, sans-serif;
       padding: 16px;
     }
     .card {
-      background: #ffffff;
-      border-radius: 24px;
-      overflow: hidden;
-      max-width: 420px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 28px;
+      max-width: 400px;
       width: 100%;
-      box-shadow: 0 16px 32px rgba(13, 148, 136, 0.35);
+      padding: 36px 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
       text-align: center;
-    }
-    .image-container {
-      width: 100%;
-      height: 280px;
-      overflow: hidden;
-    }
-    .image-container img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      object-position: center 25%;
-    }
-    .content {
-      padding: 24px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
     }
     .badge {
       display: inline-block;
-      background: #ccfbf1;
-      color: #0f766e;
-      font-weight: 700;
+      background: #0f766e;
+      color: #ffffff;
+      font-weight: 800;
       font-size: 0.85rem;
-      padding: 6px 14px;
+      padding: 8px 18px;
       border-radius: 9999px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
     }
     h1 {
-      margin: 4px 0 10px;
+      margin: 0 0 14px;
       color: #0d9488;
-      font-size: 2.1rem;
-      font-weight: 800;
+      font-size: 2.2rem;
+      font-weight: 900;
       letter-spacing: 0.5px;
       text-transform: uppercase;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
     }
     .location {
-      margin: 0 0 6px;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #1e293b;
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #0f172a;
     }
     .date {
-      margin: 0 0 14px;
-      font-size: 1.1rem;
-      font-weight: 600;
+      margin: 0 0 16px;
+      font-size: 1.2rem;
+      font-weight: 700;
       color: #0284c7;
     }
     .note {
-      margin: 0 0 20px;
+      margin: 0 0 24px;
       font-size: 1rem;
-      font-weight: 500;
-      color: #0f766e;
-      background: #f0fdfa;
-      padding: 8px 12px;
-      border-radius: 10px;
+      font-weight: 700;
+      color: #134e4a;
+      background: #ccfbf1;
+      padding: 10px 16px;
+      border-radius: 12px;
       display: inline-block;
     }
     .countdown-box {
-      background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
-      border: 2px dashed #06b6d4;
-      border-radius: 16px;
+      background: #ffffff;
+      border: 3px dashed #0d9488;
+      border-radius: 18px;
       padding: 16px 12px;
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.15);
     }
     .countdown-box span {
-      font-size: 1.35rem;
-      font-weight: 800;
+      font-size: 1.45rem;
+      font-weight: 900;
       color: #0f766e;
       letter-spacing: 0.5px;
     }
@@ -98,19 +94,14 @@
 <body>
 
   <div class="card">
-    <div class="image-container">
-      <img src="foto.jpg.jpg" alt="Tejona Fest Bacalar">
-    </div>
-    <div class="content">
-      <div class="badge">Estás invitado al</div>
-      <h1>Tejona Fest</h1>
-      <div class="location">📍 Muelle municipal</div>
-      <div class="date">📅 23 / 01 / 27</div>
-      <div class="note">🧺 Trae algo para compartir</div>
+    <div class="badge">Estás invitado al</div>
+    <h1>Tejona Fest</h1>
+    <div class="location">📍 Muelle municipal</div>
+    <div class="date">📅 23 / 01 / 27</div>
+    <div class="note">🧺 Trae algo para compartir</div>
 
-      <div class="countdown-box">
-        <span id="countdown">Calculando...</span>
-      </div>
+    <div class="countdown-box">
+      <span id="countdown">Calculando...</span>
     </div>
   </div>
 
